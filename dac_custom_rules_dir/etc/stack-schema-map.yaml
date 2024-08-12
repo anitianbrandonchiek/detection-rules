@@ -1,0 +1,7 @@
+---
+8.16.0:
+  894c9b4f-074a-4210-8106-f8de8072fc6d: C:\Users\BrandonChiek\OneDrive - Anitian,
+    Inc\Detection Engineering\detection-rules\dac_custom_rules_dir\etc\schemas\auto_gen.json
+  beats: 8.14.3
+  ecs: 8.11.0
+  endgame: 8.4.0

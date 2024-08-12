@@ -1,0 +1,17 @@
+{
+  "cloudtrail-search-logs": {
+    "aws.cloudtrail.error_code": "keyword",
+    "aws.cloudtrail.request_parameters": "keyword",
+    "aws.cloudtrail.user_identity.type": "keyword"
+  },
+  "filebeat-*": {
+    "aws.cloudtrail.console_login.additional_eventdata.mfa_used": "keyword",
+    "aws.cloudtrail.error_code": "keyword",
+    "aws.cloudtrail.flattened.request_parameters.cidrIp": "keyword",
+    "aws.cloudtrail.flattened.request_parameters.fromPort": "keyword",
+    "aws.cloudtrail.recipient_account_id": "keyword",
+    "aws.cloudtrail.request_parameters": "keyword",
+    "aws.cloudtrail.user_identity.session_context.session_issuer.type": "keyword",
+    "client.as.organization.name.text": "keyword"
+  }
+}

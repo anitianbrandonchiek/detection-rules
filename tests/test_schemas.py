@@ -28,7 +28,7 @@ class TestSchemas(unittest.TestCase):
         # expected contents for a downgraded rule
         cls.v78_kql = {
             "description": "test description",
-            "index": ["filebeat-*"],
+            "index": ["filebeat-*", "cloudtrail-search-logs"],
             "language": "kuery",
             "name": "test rule",
             "query": "process.name:test.query",

@@ -1,0 +1,6 @@
+{
+    "cloudtrail-search-logs": {
+      "aws.cloudtrail.user_identity.type": "keyword",
+      "aws.cloudtrail.error_code": "keyword"
+    }
+}
