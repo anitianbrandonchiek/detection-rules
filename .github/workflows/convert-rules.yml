@@ -24,7 +24,7 @@ jobs:
           git clone https://github.com/elastic/detection-rules.git
           cd detection-rules
           make
-          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --skip-unsupported --stack-version 8.12 --replace-id --directory ../rules --outfile ../rules-ndjson
+          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory ../rules --outfile ../rules-ndjson
 
       - name: Upload NDJSON File
         uses: actions/upload-artifact@v3
