@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ndjson-rules
-          path: rules-ndjson/*.ndjson
+          path: rules-ndjson/
