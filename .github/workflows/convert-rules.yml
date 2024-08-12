@@ -1,0 +1,33 @@
+name: Convert Elastic TOML Rules to NDJSON
+
+on:
+  push:
+    paths:
+      - 'rules/**'  # Trigger workflow only when files in the /rules directory are updated
+  workflow_dispatch:
+
+jobs:
+  convert-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Clone Elastic Detection Rules Repo & Install Dependencies Then Convert TOML Rules to NDJSON
+        run: |
+          git clone https://github.com/elastic/detection-rules.git
+          cd detection-rules
+          make
+          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --skip-unsupported --stack-version 8.12 --replace-id --directory ../rules --outfile ../rules-ndjson
+
+      - name: Upload NDJSON File
+        uses: actions/upload-artifact@v3
+        with:
+          name: ndjson-rules
+          path: rules-ndjson/*.ndjson
