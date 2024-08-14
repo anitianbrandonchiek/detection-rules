@@ -28,7 +28,8 @@ jobs:
           ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory rules --outfile rules-ndjson
 
       - name: Upload NDJSON File
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.3.6
         with:
           name: ndjson-rules.ndjson
           path: rules-ndjson
+          overwrite: true
