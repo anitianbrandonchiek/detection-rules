@@ -21,10 +21,11 @@ jobs:
 
       - name: Clone Elastic Detection Rules Repo & Install Dependencies Then Convert TOML Rules to NDJSON
         run: |
-          git clone https://github.com/elastic/detection-rules.git
+          git clone https://github.com/anitianbrandonchiek/detection-rules.git
           cd detection-rules
           make
-          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory ../rules --outfile ../rules-ndjson
+          ls
+          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory /rules --outfile /rules-ndjson
 
       - name: Upload NDJSON File
         uses: actions/upload-artifact@v3
