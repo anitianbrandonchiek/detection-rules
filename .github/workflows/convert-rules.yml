@@ -25,10 +25,10 @@ jobs:
           cd detection-rules
           make
           ls
-          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory /rules --outfile /rules-ndjson
+          ./env/detection-rules-build/bin/python -m detection_rules export-rules-from-repo --replace-id --directory rules --outfile rules-ndjson
 
       - name: Upload NDJSON File
         uses: actions/upload-artifact@v3
         with:
           name: ndjson-rules.ndjson
-          path: rules-ndjson/
+          path: rules-ndjson
